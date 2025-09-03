@@ -1,0 +1,147 @@
+/* CSS 自定義變數 */
+:root {
+  /* 主要顏色 */
+  --color-primary: #52c41a;
+  --color-primary-hover: #73d13d;
+  --color-primary-active: #389e0d;
+  
+  /* 狀態顏色 */
+  --color-success: #52c41a;
+  --color-warning: #faad14;
+  --color-error: #f5222d;
+  --color-info: #1890ff;
+  
+  /* 空氣品質等級顏色 */
+  --color-aqi-good: #52c41a;
+  --color-aqi-moderate: #faad14;
+  --color-aqi-unhealthy-sensitive: #fa8c16;
+  --color-aqi-unhealthy: #f5222d;
+  --color-aqi-very-unhealthy: #722ed1;
+  --color-aqi-hazardous: #8c0326;
+  
+  /* 水質等級顏色 */
+  --color-water-excellent: #52c41a;
+  --color-water-good: #a0d911;
+  --color-water-moderate: #faad14;
+  --color-water-poor: #fa8c16;
+  --color-water-very-poor: #f5222d;
+  
+  /* 背景顏色 */
+  --color-bg-layout: #f0f2f5;
+  --color-bg-container: #ffffff;
+  --color-bg-content: #fafafa;
+  --color-bg-sidebar: #001529;
+  --color-bg-header: #ffffff;
+  
+  /* 文字顏色 */
+  --color-text-primary: #262626;
+  --color-text-secondary: #595959;
+  --color-text-tertiary: #8c8c8c;
+  --color-text-disabled: #bfbfbf;
+  --color-text-inverse: #ffffff;
+  
+  /* 邊框顏色 */
+  --color-border-primary: #d9d9d9;
+  --color-border-secondary: #f0f0f0;
+  --color-border-light: #fafafa;
+  
+  /* 陰影 */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.09);
+  --shadow-header: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  /* 字體大小 */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 24px;
+  --font-size-title: 32px;
+  
+  /* 字重 */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* 行高 */
+  --line-height-sm: 1.2;
+  --line-height-base: 1.5;
+  --line-height-lg: 1.8;
+  
+  /* 間距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-base: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  
+  /* 圓角 */
+  --border-radius-sm: 4px;
+  --border-radius-base: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 16px;
+  
+  /* 寬度 */
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 80px;
+  --header-height: 64px;
+  --footer-height: 69px;
+  
+  /* 斷點 */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1600px;
+  
+  /* 動畫 */
+  --animation-duration-fast: 0.1s;
+  --animation-duration-base: 0.2s;
+  --animation-duration-slow: 0.3s;
+  --animation-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Z-index */
+  --z-index-dropdown: 1050;
+  --z-index-modal: 1000;
+  --z-index-sidebar: 999;
+  --z-index-header: 1000;
+  --z-index-tooltip: 1070;
+}
+
+/* 深色主題變數 */
+[data-theme='dark'] {
+  /* 背景顏色 */
+  --color-bg-layout: #141414;
+  --color-bg-container: #1f1f1f;
+  --color-bg-content: #262626;
+  --color-bg-sidebar: #001529;
+  --color-bg-header: #1f1f1f;
+  
+  /* 文字顏色 */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d9d9d9;
+  --color-text-tertiary: #8c8c8c;
+  --color-text-disabled: #595959;
+  
+  /* 邊框顏色 */
+  --color-border-primary: #434343;
+  --color-border-secondary: #303030;
+  --color-border-light: #262626;
+  
+  /* 陰影 */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-header: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* 高對比主題變數 */
+[data-theme='high-contrast'] {
+  --color-primary: #0066cc;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-bg-container: #ffffff;
+  --color-border-primary: #000000;
+}

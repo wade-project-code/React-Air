@@ -1,0 +1,377 @@
+/* 匯入 CSS 變數 */
+@import './variables.css';
+
+/* 重置樣式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 基礎樣式 */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-layout);
+  color: var(--color-text-primary);
+  transition: background-color var(--animation-duration-base) var(--animation-ease),
+              color var(--animation-duration-base) var(--animation-ease);
+}
+
+/* 移除預設樣式 */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  margin: 0;
+}
+
+/* 連結樣式 */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--animation-duration-fast) var(--animation-ease);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+a:active {
+  color: var(--color-primary-active);
+}
+
+/* 按鈕樣式重置 */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* 表單元素樣式 */
+input, 
+textarea, 
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-content);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-primary);
+  border-radius: var(--border-radius-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* Firefox 滾動條 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-primary) var(--color-bg-content);
+}
+
+/* 選擇文字顏色 */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+/* 工具提示樣式 */
+.tooltip {
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--border-radius-base);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-card);
+}
+
+/* 卡片樣式 */
+.card {
+  background: var(--color-bg-container);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-lg);
+  transition: box-shadow var(--animation-duration-base) var(--animation-ease);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* 統計卡片樣式 */
+.stat-card {
+  background: var(--color-bg-container);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: transform var(--animation-duration-base) var(--animation-ease),
+              box-shadow var(--animation-duration-base) var(--animation-ease);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-value {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* 載入狀態樣式 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background: var(--color-bg-container);
+}
+
+/* 錯誤狀態樣式 */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background: var(--color-bg-container);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.error-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-error);
+  margin-bottom: var(--spacing-sm);
+}
+
+.error-message {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* 空狀態樣式 */
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 48px;
+  color: var(--color-border-primary);
+  margin-bottom: var(--spacing-base);
+}
+
+.empty-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-xs);
+}
+
+.empty-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .card,
+  .stat-card {
+    padding: var(--spacing-base);
+  }
+  
+  .stat-value {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* AQI 等級指示器 */
+.aqi-indicator {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: white;
+}
+
+.aqi-indicator.good {
+  background-color: var(--color-aqi-good);
+}
+
+.aqi-indicator.moderate {
+  background-color: var(--color-aqi-moderate);
+}
+
+.aqi-indicator.unhealthy-sensitive {
+  background-color: var(--color-aqi-unhealthy-sensitive);
+}
+
+.aqi-indicator.unhealthy {
+  background-color: var(--color-aqi-unhealthy);
+}
+
+.aqi-indicator.very-unhealthy {
+  background-color: var(--color-aqi-very-unhealthy);
+}
+
+.aqi-indicator.hazardous {
+  background-color: var(--color-aqi-hazardous);
+}
+
+/* 趨勢指示器 */
+.trend-indicator {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.trend-indicator.increasing {
+  color: var(--color-error);
+}
+
+.trend-indicator.decreasing {
+  color: var(--color-success);
+}
+
+.trend-indicator.stable {
+  color: var(--color-text-secondary);
+}
+
+/* 圖表容器 */
+.chart-container {
+  background: var(--color-bg-container);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-lg);
+}
+
+.chart-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-base);
+}
+
+/* 頁面標題 */
+.page-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.page-title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.page-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+/* 工具提示動畫 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--animation-duration-base) var(--animation-ease);
+}
+
+/* 載入動畫 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* 高對比模式 */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border-primary: #000000;
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 縮放動畫偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 打印樣式 */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .card,
+  .stat-card,
+  .chart-container {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
